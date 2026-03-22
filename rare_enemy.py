@@ -24,9 +24,9 @@ def main():
     pyautogui.moveTo(orig_x, orig_y)
 
     pyautogui.press('2')
-    time.sleep(0.1)
+    time.sleep(0.05)
     pyautogui.press('1')
-    time.sleep(0.1)
+    time.sleep(0.05)
 
     counter = 0
 
@@ -42,12 +42,12 @@ def main():
 
         if color == alive:
             pyautogui.press('2')
-            time.sleep(0.1)
+            time.sleep(0.05)
             pyautogui.press('1')
-            time.sleep(0.1)
+            time.sleep(0.05)
         else:
             print(f"Rare enemy found after {counter} tries")
-            time.sleep(15)
+            time.sleep(5)
 
 if __name__ == "__main__":
     main()
