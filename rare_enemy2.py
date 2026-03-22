@@ -4,9 +4,11 @@ import time
 import pygetwindow as gw
 import keyboard
 
+# For finding 2 different rare enemies at the same time
+1
 def main():
 
-    # update x and y using python -m pyautogui
+    # update x and y using pytho21n -m pyautogui
     # Remember to set 1 to rare enemy area and 2 to anything else
     x = 410
     y = 410
@@ -27,7 +29,6 @@ def main():
     time.sleep(0.1)
     pyautogui.press('1')
     time.sleep(0.1)
-
     counter = 0
 
     while(True):
@@ -43,11 +44,12 @@ def main():
         if color == alive:
             pyautogui.press('2')
             time.sleep(0.1)
+        if color == alive:
             pyautogui.press('1')
             time.sleep(0.1)
         else:
             print(f"Rare enemy found after {counter} tries")
-            time.sleep(15)
+            time.sleep(5)
 
 if __name__ == "__main__":
     main()
