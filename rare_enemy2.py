@@ -32,23 +32,30 @@ def main():
     counter = 0
 
     while(True):
+        if keyboard.is_pressed('q'):
+            print("Exiting...")
+            break
+
         counter += 1
         # Grab enemy 2 healthbar color
         screenshot = ImageGrab.grab(bbox=(x, y, x+1, y+1))
         color = screenshot.getpixel((0,0))
 
-        if keyboard.is_pressed('q'):
-            print("Exiting...")
-            break
-
         if color == alive:
             pyautogui.press('2')
             time.sleep(0.1)
+        else:
+            print(f"Rare enemy 1 found after {counter} tries")
+            time.sleep(5)
+
+        screenshot = ImageGrab.grab(bbox=(x, y, x+1, y+1))
+        color = screenshot.getpixel((0,0))
+
         if color == alive:
             pyautogui.press('1')
             time.sleep(0.1)
         else:
-            print(f"Rare enemy found after {counter} tries")
+            print(f"Rare enemy 2 found after {counter} tries")
             time.sleep(5)
 
 if __name__ == "__main__":
