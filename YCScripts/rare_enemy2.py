@@ -6,11 +6,18 @@ Find 2 rare enemies on the maps set to shortcut slots 1 and 2.
 from PIL import ImageGrab
 import pyautogui
 import pygetwindow as gw
-import keyboard
+from pynput import keyboard
 
-# For finding 2 different rare enemies at the same time
-1
+def on_press(key):
+    global stop_flag
+    if key == keyboard.Key.esc:
+        print("Exiting...")
+        stop_flag = True
+
 def main():
+    global stop_flag
+    stop_flag = False
+    keyboard.Listener(on_press=on_press).start()
 
     # update x and y using python -m pyautogui
     # Remember to set 1 to rare enemy area and 2 to anything else
@@ -37,8 +44,7 @@ def main():
     counter = 0
 
     while(True):
-        if keyboard.is_pressed('q'):
-            print("Exiting...")
+        if stop_flag:
             break
 
         counter += 1
@@ -52,6 +58,9 @@ def main():
         else:
             print(f"Rare enemy 1 found after {counter} tries")
             pyautogui.sleep(5)
+
+        if stop_flag:
+            break
 
         screenshot = ImageGrab.grab(bbox=(x, y, x+1, y+1))
         color = screenshot.getpixel((0,0))

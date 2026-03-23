@@ -7,9 +7,18 @@ Make sure to set shortcut slot 2 to any other map.
 from PIL import ImageGrab
 import pyautogui
 import pygetwindow as gw
-import keyboard
+from pynput import keyboard
+
+def on_press(key):
+    global stop_flag
+    if key == keyboard.Key.esc:
+        print("Exiting...")
+        stop_flag = True
 
 def main():
+    global stop_flag
+    stop_flag = False
+    keyboard.Listener(on_press=on_press).start()
 
     # update x and y using python -m pyautogui
     # Remember to set 1 to rare enemy area and 2 to anything else
@@ -37,14 +46,13 @@ def main():
     counter = 0
 
     while(True):
+        if stop_flag:
+            break
+        
         counter += 1
         # Grab enemy 2 healthbar color
         screenshot = ImageGrab.grab(bbox=(x, y, x+1, y+1))
         color = screenshot.getpixel((0,0))
-
-        if keyboard.is_pressed('q'):
-            print("Exiting...")
-            break
 
         if color == alive:
             pyautogui.press('2')
