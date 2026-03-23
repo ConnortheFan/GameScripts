@@ -1,0 +1,69 @@
+TurnRight()
+for (let i = 0; i < 2; i++) {
+	MoveForward()
+}
+
+while(true) {
+
+while(!SyncWorkers()) {}
+// Wait for coins to spawn
+for (let i = 0; i < 3; i++) {
+	MoveForward()
+}
+for (let i = 0; i < 2; i++) {
+	TurnRight()
+}
+MoveForward()
+TurnRight()
+MoveForward()
+MoveForward()
+TurnRight()
+MoveForward()
+MoveForward()
+MoveForward()
+TurnRight()
+for (let i = 0; i < 7; i++) {
+	MoveForward()
+}
+
+ThrowItem(0)
+while(!SyncWorkers()) {}
+ThrowItem(0)
+ThrowItem(0)
+ThrowItem(0)
+ThrowItem(0)
+TurnRight()
+for (let i = 0; i < 2; i++) {
+	MoveForward()
+}
+TurnRight()
+MoveForward()
+TurnLeft()
+for (let i = 0; i < 2; i++) {
+	MoveForward()
+}
+TurnLeft()
+MoveForward()
+TurnRight()
+while(!SyncWorkers()) {}
+
+// Recieving 2 reds
+DoNothing()
+DoNothing()
+for (let i = 0; i < 5; i++) {
+	MoveForward()
+}
+TurnRight()
+for (let i = 0; i < 5; i++) {
+	MoveForward()
+}
+TurnRight()
+DoNothing()
+DoNothing()
+for (let i = 0; i < 4; i++) {
+	MoveForward()
+}
+// In front of start
+
+}
+

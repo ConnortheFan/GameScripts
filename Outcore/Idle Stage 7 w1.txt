@@ -1,0 +1,87 @@
+// 31 per cycle
+
+for(let i = 0; i < 6; i++) {
+	MoveForward()
+}
+TurnLeft()
+MoveForward()
+TurnLeft()
+// Start loop
+
+while(true) {
+
+MoveForward()
+TurnLeft()
+for (let i = 0; i < 5; i++) {
+	MoveForward()
+}
+// Pass second button
+SyncWorkers()
+
+TurnRight()
+for (let i = 0; i < 7; i++) {
+	MoveForward()
+}
+TurnRight()
+for (let i = 0; i < 12; i++) {
+	MoveForward()
+}
+TurnRight()
+for (let i = 0; i < 4; i++) {
+	MoveForward()
+}
+TurnRight()
+for (let i = 0; i < 3; i++) {
+	MoveForward()
+}
+TurnLeft()
+MoveForward()
+// On blender
+for (let i = 0; i < 5; i++) {
+	DoNothing()
+}
+for (let i = 0; i < 4; i++) {
+	MoveForward()
+}
+SyncWorkers()
+// Pick up 5 from other side
+TurnLeft()
+for (let i = 0; i < 4; i++) {
+	DoNothing()
+}
+MoveForward()
+TurnLeft()
+MoveForward()
+// On second blender
+for (let i = 0; i < 5; i++) {
+	DoNothing()
+}
+MoveForward()
+TurnRight()
+MoveForward()
+MoveForward()
+TurnLeft()
+MoveForward()
+MoveForward()
+TurnRight()
+MoveForward()
+TurnRight()
+MoveForward()
+MoveForward()
+DoNothing()
+DoNothing()
+MoveForward()
+MoveForward()
+while(!SyncWorkers()) {}
+
+// Throwing Reds
+ThrowItem(0)
+ThrowItem(0)
+TurnRight()
+for (let i = 0; i < 8; i++) {
+	MoveForward()
+}
+TurnRight()
+MoveForward()
+
+}

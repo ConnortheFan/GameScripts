@@ -1,0 +1,46 @@
+for (let i = 0; i < 5; i++) {
+	MoveForward()
+}
+TurnRight()
+
+while(!SyncWorkers()) {
+}
+
+while(true) {
+
+for (let i = 0; i < 3; i++) {
+	MoveForward()
+}
+TurnRight()
+for (let i = 0; i < 3; i++) {
+	MoveForward()
+}
+TurnLeft()
+for (let i = 0; i < 3; i++) {
+	MoveForward()
+}
+TurnRight()
+for (let i = 0; i < 2; i++) {
+	MoveForward()
+}
+for (let i = 0; i < 4; i++) {
+	DoNothing()
+}
+MoveForward()
+TurnRight()
+for (let i = 0; i < 8; i++) {
+	MoveForward()
+}
+TurnRight()
+// Looking at red
+while(!SyncWorkers()) {}
+
+for (let i = 0; i < 6; i++) {
+	MoveForward()
+}
+TurnRight()
+for (let i = 0; i < 2; i++) {
+	MoveForward()
+}
+
+}

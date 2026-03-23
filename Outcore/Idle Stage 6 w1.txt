@@ -1,0 +1,77 @@
+TurnRight()
+MoveForward()
+MoveForward()
+MoveForward()
+TurnRight()
+for (let i = 0; i < 5; i++) {
+	MoveForward()
+}
+
+SyncWorkers()
+
+// Do 1 iteration
+TurnLeft()
+TurnLeft()
+
+for (let i = 0; i < 7; i++) {
+	MoveForward()
+}
+
+TurnRight()
+TurnRight()
+MoveForward()
+MoveForward()
+TurnRight()
+for (let i = 0; i < 5; i++) {
+	MoveForward()
+}
+TurnLeft()
+DoNothing()
+DoNothing()
+DoNothing()
+DoNothing()
+
+for (let i = 0; i < 5; i++) {
+	MoveForward()
+}
+TurnLeft()
+for (let i = 0; i < 5; i++) {
+	MoveForward()
+}
+
+// Start loop
+while(true) {
+
+TurnLeft()
+
+for (let i = 0; i < 2; i++) {
+	MoveForward()
+}
+while(!SyncWorkers()) {}
+for (let i = 0; i < 5; i++) {
+	MoveForward()
+}
+
+TurnRight()
+TurnRight()
+MoveForward()
+MoveForward()
+TurnRight()
+for (let i = 0; i < 5; i++) {
+	MoveForward()
+}
+TurnLeft()
+DoNothing()
+DoNothing()
+DoNothing()
+DoNothing()
+
+for (let i = 0; i < 5; i++) {
+	MoveForward()
+}
+TurnLeft()
+for (let i = 0; i < 5; i++) {
+	MoveForward()
+}
+
+}

@@ -1,5 +1,7 @@
-# YourChronicleScripts
-Scripts I use for the game Your Chronicle
+# YGameScripts
+Scripts I use for various games.
+
+## YCSCripts
 
 ## rare_enemy.py
 Set shortcut slot 1 to rare enemy map, set shortcut slot 2 to any other map. Press q to quit.
