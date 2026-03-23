@@ -2,7 +2,7 @@ import pyautogui
 from pynput import mouse
 from pynput import keyboard
 
-cps = 100 # Clicks per second, adjust as needed
+cps = 20 # Clicks per second, adjust as needed
 
 sleepTime = 1/cps
 autoclickerOn = False
@@ -27,9 +27,9 @@ def on_release(key):
 def on_scroll(x, y, dx, dy):
     global cps, sleepTime, autoclickerOn
     if dy > 0:  # Scroll up
-        cps += 10
+        cps += 1
     elif dy < 0:  # Scroll down
-        cps = max(0, cps - 10)  # Prevent cps from going below 0
+        cps = max(0, cps - 1)  # Prevent cps from going below 0
     if cps == 0:
         sleepTime = 1
         autoclickerOn = False
@@ -44,8 +44,9 @@ def main():
     while True:
         if autoclickerOn:
             pyautogui.mouseDown()
-            pyautogui.sleep(sleepTime)
+            pyautogui.sleep(0.0001)
             pyautogui.mouseUp()
+            pyautogui.sleep(sleepTime)
         if quit:
             break
 
