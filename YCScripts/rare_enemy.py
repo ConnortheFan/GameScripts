@@ -1,6 +1,11 @@
+"""Rare Enemy Finder for Your Chronicle
+
+Find 1 rare enemy on the map set to shortcut slot 1.
+Make sure to set shortcut slot 2 to any other map.
+"""
+
 from PIL import ImageGrab
 import pyautogui
-import time
 import pygetwindow as gw
 import keyboard
 
@@ -11,6 +16,7 @@ def main():
     x = 410
     y = 410
     alive = (235, 100, 100)
+    switchDelay = 0.05
 
     # no need to update x and y if following code is run
     win = gw.getWindowsWithTitle('YourChronicle')[0]
@@ -20,13 +26,13 @@ def main():
 
     orig_x, orig_y = pyautogui.position()
     pyautogui.click(x, y)
-    time.sleep(1)
+    pyautogui.sleep(switchDelay)
     pyautogui.moveTo(orig_x, orig_y)
 
     pyautogui.press('2')
-    time.sleep(0.05)
+    pyautogui.sleep(switchDelay)
     pyautogui.press('1')
-    time.sleep(0.05)
+    pyautogui.sleep(switchDelay)
 
     counter = 0
 
@@ -42,12 +48,12 @@ def main():
 
         if color == alive:
             pyautogui.press('2')
-            time.sleep(0.05)
+            pyautogui.sleep(switchDelay)
             pyautogui.press('1')
-            time.sleep(0.05)
+            pyautogui.sleep(switchDelay)
         else:
             print(f"Rare enemy found after {counter} tries")
-            time.sleep(5)
+            pyautogui.sleep(5)
 
 if __name__ == "__main__":
     main()

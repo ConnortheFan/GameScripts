@@ -1,3 +1,10 @@
+"""This is an autoclicker script
+
+Press ` to activate/deactivate the autoclicker
+Press ESC to quit the script
+Scroll up to increase CPS, scroll down to decrease CPS
+"""
+
 import pyautogui
 from pynput import mouse
 from pynput import keyboard
@@ -38,6 +45,8 @@ def on_scroll(x, y, dx, dy):
     print(f"Current CPS: {cps}")
 
 def main():
+    print("Running autoclicker. Press ` to toggle on/off, scroll to adjust CPS, and ESC to quit.")
+
     mouse.Listener(on_scroll=on_scroll).start()
     keyboard.Listener(on_press=on_press, on_release=on_release).start()
 
