@@ -10,6 +10,9 @@ Records your inputs after 3 seconds. Press ESC to end the recording. Will save r
 ### macro_playback.py
 Plays your recorded inputs from json file from macro_record.py. 
 
+### macro_playback_loop.py
+Same as macro_playback.py, but in an infinite loop. Press ESC to stop the playback.
+
 ### YCScripts/rare_enemy.py
 Set shortcut slot 1 to rare enemy map, set shortcut slot 2 to any other map. Press q to quit.
 
