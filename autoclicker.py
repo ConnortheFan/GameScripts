@@ -6,8 +6,7 @@ Scroll up to increase CPS, scroll down to decrease CPS
 """
 
 import pyautogui
-from pynput import mouse
-from pynput import keyboard
+from pynput import mouse, keyboard
 
 pyautogui.PAUSE = 0
 
@@ -19,7 +18,7 @@ pressed = False
 quit = False
 
 def on_press(key):
-    global pressed, autoclickerOn, quit
+    global pressed, autoclickerOn, quit, cps, sleepTime
     if key == keyboard.KeyCode.from_char('`') and not pressed:
         pressed = True
         autoclickerOn = not autoclickerOn
@@ -27,6 +26,18 @@ def on_press(key):
     elif key == keyboard.Key.esc:
         quit = True
         print("Quitting autoclicker.")
+    elif key == keyboard.Key.up:
+        cps += 1
+        sleepTime = 1/cps
+        print(f"Current CPS: {cps}")
+    elif key == keyboard.Key.down:
+        cps = max(0, cps - 1)
+        if cps == 0:
+            sleepTime = 1
+            autoclickerOn = False
+        else:
+            sleepTime = 1 / cps
+        print(f"Current CPS: {cps}")
 
 def on_release(key):
     global pressed
@@ -55,7 +66,7 @@ def main():
     while True:
         if autoclickerOn:
             pyautogui.mouseDown()
-            pyautogui.sleep(0.0001)
+            pyautogui.sleep(0.001)
             pyautogui.mouseUp()
             pyautogui.sleep(sleepTime)
         if quit:
