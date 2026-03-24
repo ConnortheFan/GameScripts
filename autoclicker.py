@@ -9,6 +9,8 @@ import pyautogui
 from pynput import mouse
 from pynput import keyboard
 
+pyautogui.PAUSE = 0
+
 cps = 20 # Clicks per second, adjust as needed
 
 sleepTime = 1/cps
