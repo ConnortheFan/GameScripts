@@ -1,5 +1,5 @@
-# YGameScripts
-Scripts I use for various games.
+# GameScripts
+Scripts I wrote for various games.
 
 ### autoclicker.py
 Press ` to start/stop the autoclicker. Press ESC to end the program. Use the mouse scroll wheel to adjust the cps.
