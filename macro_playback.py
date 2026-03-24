@@ -1,3 +1,8 @@
+"""Playback a macro recorded by macro_recorder.py
+
+Only plays back mouse clicks, not keyboard events.
+"""
+
 import pyautogui
 import json
 

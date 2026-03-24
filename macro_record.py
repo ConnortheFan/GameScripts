@@ -1,3 +1,8 @@
+"""Record a macro for use by macro_playback.py
+
+Only records mouse clicks, not keyboard events.
+"""
+
 from pynput import keyboard, mouse
 import time
 import json
