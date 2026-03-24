@@ -5,7 +5,7 @@ Scripts I wrote for various games.
 Press ` to start/stop the autoclicker. Press ESC to end the program. Use the mouse scroll wheel to adjust the cps.
 
 ### macro_record.py
-Records your inputs after 3 seconds. Press ESC to end the recording. Will save recording as json. Only records mouse clicks for now.
+Records your inputs after 3 seconds. Press ESC to end the recording. Will save recording as json. Records mouse and keyboard.
 
 ### macro_playback.py
 Plays your recorded inputs from json file from macro_record.py. 

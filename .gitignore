@@ -1,3 +1,4 @@
 *.json
 YCScripts/YourChronicle_*
 __pycache__/*
+playground.py
