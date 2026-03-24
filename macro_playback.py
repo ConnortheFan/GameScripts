@@ -9,7 +9,6 @@ import json
 pyautogui.FAILSAFE = False
 pyautogui.PAUSE = 0
 events = []
-old_time = 0.0
 
 def load(filename="macro.json"):
     global events
@@ -17,11 +16,9 @@ def load(filename="macro.json"):
         events = json.load(f)
 
 def playback():
-    global old_time
     for event in events:
-        event_type, x, y, pressed, t = event
-        pyautogui.sleep(t - old_time)
-        old_time = t
+        event_type, x, y, pressed, delay = event
+        pyautogui.sleep(delay)
         if event_type == "mouse_click":
             if pressed:
                 pyautogui.mouseDown(x=x, y=y)

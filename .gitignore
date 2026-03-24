@@ -1,2 +1,3 @@
 *.json
 YCScripts/YourChronicle_*
+__pycache__/*
