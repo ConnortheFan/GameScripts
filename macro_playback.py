@@ -5,10 +5,18 @@ Plays back mouse and keyboard inputs.
 
 import pyautogui
 import json
+from pynput import keyboard
 
-pyautogui.FAILSAFE = False
 pyautogui.PAUSE = 0
 events = []
+
+playing = True
+
+def on_press(key):
+    global playing
+    if key == keyboard.Key.esc:
+        print("Stopping playback...")
+        playing = False
 
 def load(filename="macro.json"):
     global events
@@ -17,9 +25,16 @@ def load(filename="macro.json"):
 
 def playback():
     for event in events:
+        if not playing:
+            return
+
         # item = [key/button, x, y, pressed]
         event_type, delay, *item = event
         pyautogui.sleep(delay)
+
+        if not playing:
+            return
+        
         if event_type == "mouse":
             if item[3]:
                 pyautogui.mouseDown(x=item[1], y=item[2], button=item[0])
@@ -32,7 +47,8 @@ def playback():
 
 if __name__ == "__main__":
     load()
-    print("Playing back macro...")
+    print("Playing back macro, press ESC to exit")
+    keyboard.Listener(on_press=on_press).start()
     print("3...")
     pyautogui.sleep(1)
     print("2...")
