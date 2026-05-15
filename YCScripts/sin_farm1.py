@@ -57,7 +57,8 @@ DUNGEON_3 = (820, 400)
 REINCARNATE_CONFIRM = [
     (555, 575),
     (555, 606),
-    (555, 555)
+    (555, 555),
+    (555, 567)
 ]
 REINCARNATE_CONFIRM_COLOR = (226, 226, 226)
 
@@ -275,12 +276,12 @@ def forest():
     enter_dungeon(*DUNGEON_1)
     while get_pixel(*DUNGEON_2) == EMPTY:
         ag.sleep(1)
-    print("Forest 1 Done")
+    # print("Forest 1 Done")
     ag.leftClick(DUNGEON_2)
     enter_dungeon(*DUNGEON_2)
     while get_pixel(*DUNGEON_3) == EMPTY:
         ag.sleep(1)
-    print("Forest 2 Done")
+    # print("Forest 2 Done")
     ag.leftClick(DUNGEON_3)
     enter_dungeon(*DUNGEON_3)
     sloth(695, 321)
@@ -421,7 +422,8 @@ def reincarnate():
     print("Reincarnated")
 
 def main():
-    for i in range(3):
+    for i in range(30):
+        print(f"Starting run {i+1}")
         activate_screen()
         setup()
         village1()
@@ -429,7 +431,8 @@ def main():
         forest()
         academy()
         demon()
-        # reincarnate()
+        reincarnate()
+        print(f"Finished run {i+1}")
 
 if __name__ == "__main__":
     main()

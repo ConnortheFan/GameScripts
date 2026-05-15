@@ -61,7 +61,7 @@ def main():
             pyautogui.sleep(switchDelay)
         else:
             print(f"Rare enemy found after {counter} tries")
-            pyautogui.sleep(5)
+            pyautogui.sleep(3)
 
 if __name__ == "__main__":
     main()
