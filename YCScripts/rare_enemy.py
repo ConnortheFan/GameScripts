@@ -49,7 +49,6 @@ def main():
         if stop_flag:
             break
         
-        counter += 1
         # Grab enemy 2 healthbar color
         screenshot = ImageGrab.grab(bbox=(x, y, x+1, y+1))
         color = screenshot.getpixel((0,0))
@@ -59,9 +58,10 @@ def main():
             pyautogui.sleep(switchDelay)
             pyautogui.press('1')
             pyautogui.sleep(switchDelay)
+            counter += 1
         else:
             print(f"Rare enemy found after {counter} tries")
-            pyautogui.sleep(3)
+            pyautogui.sleep(1)
 
 if __name__ == "__main__":
     main()
